@@ -6,8 +6,26 @@ const color = document.querySelector('#color')
 
 // define more constants and variables here
 
-btn_toggle.onclick = () => {
-  // your code here
+function ToggleCalculation()
+{
+  let studentID = 630610724;
+  let studentName = "CHAYANON PITAK";
+
+  let section = document.querySelector('body').querySelectorAll('div')[1];
+  let text = section.querySelector('h2');
+  let button = section.querySelector('button');
+
+  let searchBox = document.querySelector('body').querySelectorAll('div')[0].querySelectorAll('input')[0];
+  if (button.innerText === "Display Calculation")
+  {
+    button.innerText = "Display Author";
+    text.innerText = studentID - searchBox.value;
+  }
+  else
+  {    
+    button.innerText = "Display Calculation";
+    text.innerText = studentID + " " + studentName;
+  }
 }
 
 // more codes for Search and Reset buttons here
