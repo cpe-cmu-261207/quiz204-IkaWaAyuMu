@@ -6,12 +6,26 @@ const color = document.querySelector('#color')
 
 // define more constants and variables here
 
+const Paragraph = document.querySelector('body').querySelector('p').innerText;
+
 function ResetValue()
 {
   let section = document.querySelector('body').querySelectorAll('div')[0];
 
   section.querySelectorAll('input')[0].value = 5;
   section.querySelectorAll('input')[1].value = "#FFFF00";
+  document.querySelector('body').querySelector('p').innerText = Paragraph;
+}
+
+function Search()
+{
+  let SplittedString = Paragraph.split(" ");
+  let finalResult = "";
+  SplittedString.forEach(str => {
+    if (str.length < document.querySelector('body').querySelectorAll('div')[0].querySelectorAll('input')[0].value) finalResult += str + " ";
+    else finalResult += "<span style=\"background-color: " +  document.querySelector('body').querySelectorAll('div')[0].querySelectorAll('input')[1].value + "\">" + str + "</span> ";
+  });
+  document.querySelector('body').querySelector('p').innerHTML = finalResult;
 }
 
 function ToggleCalculation()
