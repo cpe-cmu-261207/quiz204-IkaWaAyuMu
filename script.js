@@ -6,6 +6,14 @@ const color = document.querySelector('#color')
 
 // define more constants and variables here
 
+function ResetValue()
+{
+  let section = document.querySelector('body').querySelectorAll('div')[0];
+
+  section.querySelectorAll('input')[0].value = 5;
+  section.querySelectorAll('input')[1].value = "#FFFF00";
+}
+
 function ToggleCalculation()
 {
   let studentID = 630610724;
